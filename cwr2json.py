@@ -8,20 +8,14 @@ from cwr.parser.decoder.file import default_file_decoder
 from cwr.parser.encoder.cwrjson import JSONEncoder
 
 #Read a cwr file stream via stdin and return back cwr-json via stdout
+#Usage example  : python3 cwr2json.py < tests/examples/ackexample.V21 > ackexample.V21.json
 if __name__ == '__main__':
 
     decoder = default_file_decoder()
 
     data = {}
     data['filename'] = ''
-    data['contents'] = '';
-
-    for line in sys.stdin.readlines():
-        #This is a workaround (still have some issues with COM record on some files)
-        if line.startswith('COM') == False :
-            data['contents'] += line
-            if line.startswith('TRL') == True :
-               break
+    data['contents'] = sys.stdin.read()
 
     data['contents'] = data['contents'].replace('\n','')
     #replace '\r with 300 SPACES
@@ -31,6 +25,7 @@ if __name__ == '__main__':
       spaces +=" "
     spaces +='\n'
     data['contents'] = data['contents'].replace('\r',spaces)
+
     data = decoder.decode(data)
     encoder = JSONEncoder()
     result = encoder.encode(data)

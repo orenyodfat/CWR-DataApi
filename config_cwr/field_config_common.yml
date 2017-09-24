@@ -49,8 +49,8 @@ cd_identifier:
   name: CD Identifier
 
 component_duration:
-  type: time
-  size: 8
+  type: alphanum
+  size: 6
   name: Duration
   results_name: duration
 
@@ -238,7 +238,7 @@ ip_last_name:
   type: alphanum
   size: 45
   name: Interested Party Last Name
-  
+
 ip_n:
   type: alphanum
   size: 9
@@ -676,6 +676,16 @@ writer_1_ipi_base_n:
   type: ipi_base_n
   size: 13
   name: Writer 1 IPI Base Number
+
+writer_1_ipi_base_n_com:
+  type: alphanum
+  size: 11
+  name: Writer 1 IPI Base Number COM
+
+writer_2_ipi_base_n_com:
+  type: alphanum
+  size: 11
+  name: Writer 2 IPI Base Number COM 
 
 writer_1_ipi_name_n:
   type: ipi_name_n

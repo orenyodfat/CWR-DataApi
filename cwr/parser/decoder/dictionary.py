@@ -248,8 +248,8 @@ class ComponentDictionaryDecoder(Decoder):
             self._ipi_base_decoder = IPIBaseDictionaryDecoder()
 
     def decode(self, data):
-        ipi_base_1 = self._ipi_base_decoder.decode(data['writer_1_ipi_base_n'])
-        ipi_base_2 = self._ipi_base_decoder.decode(data['writer_2_ipi_base_n'])
+        ipi_base_1 = self._ipi_base_decoder.decode(data['writer_1_ipi_base_n_com'])
+        ipi_base_2 = self._ipi_base_decoder.decode(data['writer_2_ipi_base_n_com'])
 
         return ComponentRecord(record_type=data['record_type'],
                                transaction_sequence_n=data[

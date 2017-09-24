@@ -67,8 +67,8 @@ transaction_record:
         field: writer_2_last_name
         field: writer_2_first_name
         field: writer_2_ipi_name_n
-        field: writer_1_ipi_base_n
-        field: writer_2_ipi_base_n
+        field: writer_1_ipi_base_n_com
+        field: writer_2_ipi_base_n_com
         ]
 
       ]
